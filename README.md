@@ -84,4 +84,3 @@ FitBot is a fun and informative AI assistant, but it's not a replacement for pro
 Questions? Ideas? Reach out at gu4378374@alphacollege.me
 
 Happy Fitness Journey with FitBot! 🏃‍♂️🤖
-```
