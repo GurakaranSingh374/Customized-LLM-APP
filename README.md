@@ -1,42 +1,87 @@
-# Customized-LLM-APP
+# FitBot: Your AI Fitness Companion(RAG) 🏋️‍♀️💪
 
-Building a Retrieval-Augmented Generation (RAG) bot can significantly enhance the capabilities of a language model by incorporating external knowledge to generate more accurate and contextually relevant responses. This guide will walk you through creating a simple RAG bot using Gradio and the Hugging Face APIs.
+Harness the power of Retrieval-Augmented Generation (RAG) to create a smart, context-aware fitness assistant. This project demonstrates how to build a chatbot that combines the latest in language modeling with specialized fitness knowledge.
 
-But how does RAG enhance LLM’s performance?
+## Project Overview
 
-RAG improves the performance of language models by augmenting them with external documents. This method retrieves relevant documents based on the user query and combines them with the original prompt before passing them to the language model for response generation. This approach ensures that the language model can access up-to-date and domain-specific information without the need for extensive retraining.
+FitBot is an AI-powered chatbot designed to provide personalized fitness advice, leveraging:
 
+- Zephyr LLM for natural language understanding and generation
+- all-MiniLM-L6-v2 for efficient document embedding
+- THE COMPLETE FITNESS HANDBOOK as a comprehensive knowledge base
 
+## The Magic of RAG
 
-A common scenario of RAG helping LLM (Source)
+RAG technology allows FitBot to:
+1. Understand your fitness queries
+2. Search its vast knowledge base for relevant information
+3. Formulate expert-level responses tailored to your needs
 
-The basic steps in RAG can be simplified as follows:
+This means you get the benefits of both broad AI capabilities and specific fitness expertise!
 
-Input: The question to which the LLM system responds is referred to as the input. If no RAG is used, the LLM is directly used to respond to the question.
+## Getting Started
 
-Indexing: If RAG is used, then a series of related documents are indexed by chunking them first, generating embeddings of the chunks, and indexing them into a vector store. At inference, the query is also embedded in a similar way.
+### Prerequisites
+- Python 3.6+
+- Hugging Face account
+- THE COMPLETE FITNESS HANDBOOK (PDF format)
 
+### Quick Setup
 
-Basic retrieval steps in RAG. (Source)
+1. Clone and navigate:
+   ```
+   git clone https://github.com/GurakaranSingh374/fitbot.git
+   cd fitbot
+   ```
 
-Retrieval: The relevant documents are obtained by comparing the query against the indexed vectors, also denoted as “Relevant Documents”.
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-Generation: The relevant documents are combined with the original prompt as additional context. The combined text and prompt are then passed to the model for response generation which is then prepared as the final output of the system to the user.
+3. Add your fitness handbook:
+   - Rename your PDF to `fitnesshandbook.pdf`
+   - Place it in the project root directory
 
-In the example provided, using the model directly fails to respond to the question due to a lack of knowledge of current events. On the other hand, when using RAG, the system can pull the relevant information needed for the model to answer the question appropriately. (Source)
+4. Launch FitBot:
+   ```
+   python app.py
+   ```
 
-Now Let’s Build a Chatbot using RAG:
+5. Open the provided URL in your browser and start chatting!
 
-I have used Zephyr LLM model and all-MiniLM-L6-v2 sentence transformer model. This sentence-transformers model maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
+## Customization Options
 
-The all-* models were trained on all available training data (more than 1 billion training pairs) and are designed as general purpose models. The all-mpnet-base-v2 model provides the best quality, while all-MiniLM-L6-v2 is 5 times faster and still offers good quality. Toggle All models to see all evaluated original models.
+Make FitBot your own:
 
-We need the following ingredients:
+- Swap out `fitnesshandbook.pdf` for any fitness-related PDF
+- Adjust the `system_message` in `app.py` to change FitBot's personality
+- Experiment with different Hugging Face models
+- Add new example queries to showcase FitBot's capabilities
 
-1. A PDF as your knowledgebase
+## Deployment: Share Your FitBot
 
-2. A requirements.txt file
+Take FitBot live with Hugging Face Spaces:
 
-3. An app.py file
+1. Fork this repo
+2. Create a new Space on [Hugging Face](https://huggingface.co/spaces)
+3. Select Gradio as your SDK
+4. Connect your forked repo
+5. Upload your `fitnesshandbook.pdf`
+6. Launch and share your FitBot with the world!
 
-4. An account on Hugging Face (See this blog to learn about building a LLM chatbot in Hugging Face)
+## Important Note
+
+FitBot is a fun and informative AI assistant, but it's not a replacement for professional medical or fitness advice. Always consult with qualified experts for your health and fitness needs.
+
+## Join the FitBot Community
+
+- Found a bug? Have an idea? Open an issue or submit a PR!
+- We're excited to see how you'll enhance FitBot
+
+## Get in Touch
+
+Questions? Ideas? Reach out at gu4378374@alphacollege.me
+
+Happy Fitness Journey with FitBot! 🏃‍♂️🤖
+```
